@@ -2,10 +2,14 @@
 
 Timetable Script is a simple script, created to generate tables based on the inputted data.
 
-## Usage
+## Installation
+
 ```bash
-start run.bat
+pip install -r requirements.txt
 ```
+
+## Usage
+Run `table_maker.py` inside the core folder. Make sure that you have installed every modules in `requirements.txt`
 
 ## Contributing
 
