@@ -1,5 +1,6 @@
 from tabulate import tabulate
 from import_value import ImportValue
+from pathlib import Path
 
 array = []
 parts = []
@@ -25,8 +26,12 @@ input_data()
 
 nest = dict(zip(parts, array))
 
-for part, table in nest.items():
-    print(f"\n\nTABLE FOR {part.upper()}")
-    print(
-        f'\n{tabulate(table, headers="keys", showindex="always", tablefmt="fancy_grid")}'
-    )
+current_path = Path.cwd()
+
+with open(f"{current_path.parent}\\result.txt", "a", encoding="utf-8") as f:
+    for part, table in nest.items():
+        f.write(f"\n\nTABLE FOR {part.upper()}")
+        f.write(
+            f'\n{tabulate(table, headers="keys", showindex="always", tablefmt="fancy_grid")}'
+        )
+        f.write("\n\n\nEND")
