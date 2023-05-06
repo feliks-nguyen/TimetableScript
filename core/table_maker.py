@@ -5,7 +5,7 @@ array = []
 parts = []
 
 
-def table_input():
+def input():
     parts_num = int(input("\nEnter number of parts: "))
     for i in range(1, parts_num + 1):
         part = input(f"\nEnter name for part {i}: ")
@@ -21,7 +21,7 @@ def table_input():
         array.append(table.copy())
 
 
-table_input()
+input()
 
 nest = dict(zip(parts, array))
 
