@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Run `table_maker.py` inside the `\core` folder. Make sure that you have installed every modules in `requirements.txt`
+Run `python table_maker.py`. Make sure that you have installed every modules in `requirements.txt`
 
 ## Contributing
 

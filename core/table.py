@@ -1,11 +1,11 @@
 from tabulate import tabulate
-from core.import_value import ImportValue
+from import_value import ImportValue
 
 array = []
 parts = []
 
 
-def input():
+def input_data():
     parts_num = int(input("\nEnter number of parts: "))
     for i in range(1, parts_num + 1):
         part = input(f"\nEnter name for part {i}: ")
@@ -21,7 +21,7 @@ def input():
         array.append(table.copy())
 
 
-input()
+input_data()
 
 nest = dict(zip(parts, array))
 
