@@ -22,8 +22,8 @@ class ImportValue:
             num_day.append(day)
             names = []
             for num in range(1, self.day_session_nums + 1):
-                print(f"\nInsert data for day {day}:")
-                name = str(input(f"\nInsert name for session {num}: "))
+                print(f"\nEnter data for day {day}:")
+                name = str(input(f"\nEnter name for session {num}: "))
                 names.append(name)
             day_sessions.append(names)
 

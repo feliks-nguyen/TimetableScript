@@ -14,7 +14,7 @@ def input_data():
         print(f"\nEnter value for {name}:")
         value = ImportValue(
             int(input("\nFor how many days in week? ")),
-            int(input("\nNumber of sessions per day: ")),
+            int(input("\nEnter number of sessions per day: ")),
         )
         name, sessions = value.days_sessions()
         table = dict(zip(name, sessions))
