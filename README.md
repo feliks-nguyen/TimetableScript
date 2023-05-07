@@ -3,6 +3,7 @@
 Timetable Script is a simple script, created to generate tables based on the inputted data.
 
 ## Installation
+Python version: `3.11.3`
 
 ```bash
 pip install -r requirements.txt
