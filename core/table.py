@@ -7,6 +7,7 @@ parts = []
 
 
 def input_data():
+    # Adds data to 2 lists
     parts_num = int(input("\nEnter number of parts: "))
     for i in range(1, parts_num + 1):
         part = input(f"\nEnter name for part {i}: ")
@@ -28,10 +29,12 @@ nest = dict(zip(parts, array))
 
 current_path = Path.cwd()
 
-with open(f"{current_path.parent}\\result.txt", "a", encoding="utf-8") as f:
+# Exports result into a file
+with open(f"{current_path.parent}\\result.txt", "w", encoding="utf-8") as f:
     for part, table in nest.items():
         f.write(f"\n\nTABLE FOR {part.upper()}")
         f.write(
             f'\n{tabulate(table, headers="keys", showindex="always", tablefmt="fancy_grid")}'
         )
-        f.write("\n\n\nEND")
+        f.write("\n\n\n ")
+        f.close()
