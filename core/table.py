@@ -37,7 +37,7 @@ class TableData:
                     self.parts.append(part)
                 break
             except Exception:
-                print('Please enter a valid number!')
+                print("Please enter a valid number!")
 
         for name in self.parts:
             print(f"\nEnter value for {name}:")

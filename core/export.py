@@ -29,8 +29,8 @@ nest = TableData().inputData()
 
 def exportTXT(filename):
     """export the table into a <given name>.txt file"""
-        # Define the file name and path
-    file_path = Path.cwd().parent / 'results' / f'{filename}.xlsx'
+    # Define the file name and path
+    file_path = Path.cwd().parent / "results" / f"{filename}.xlsx"
     with open(f"{file_path}", "w", encoding="utf-8") as f:
         # Loop over the nested dictionary and create a dataframe for each table
         for part, table in nest.items():
@@ -47,10 +47,10 @@ def exportTXT(filename):
 
 def exportXLSX(filename):
     # Define the file name and path
-    file_path = Path.cwd().parent / 'results' / f'{filename}.xlsx'
+    file_path = Path.cwd().parent / "results" / f"{filename}.xlsx"
 
     # Create an ExcelWriter object
-    with pd.ExcelWriter(file_path, engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(file_path, engine="xlsxwriter") as writer:
         # Loop over the nested dictionary and create a dataframe for each table
         for part, table in nest.items():
             df = pd.DataFrame(table)
@@ -59,7 +59,7 @@ def exportXLSX(filename):
             df.to_excel(writer, sheet_name=part.capitalize())
 
 
-def mode():
+def main():
     print('Chose your export file type:\nEnter "1" for: txt\nEnter "2" for: xlsx')
     while True:
         mode = input()
@@ -73,4 +73,6 @@ def mode():
         else:
             print("Invalid file format! Please try again.")
 
-mode()
+#Run the main program
+if __name__ == "__main__":
+	main()

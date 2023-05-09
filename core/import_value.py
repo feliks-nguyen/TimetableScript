@@ -32,7 +32,7 @@ class ImportValue:
                 self.lessons = int(input("\nEnter number of sessions per day: "))
                 break
             except Exception:
-                print('Please enter a valid number!')
+                print("Please enter a valid number!")
 
     def days_sessions(self):
         # Returns number of days in a week, and name of each sessions in a day.
