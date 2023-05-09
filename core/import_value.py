@@ -19,41 +19,32 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import calendar
 
-
-day_name = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-]
+heptad = list(calendar.day_abbr)
 
 
 class ImportValue:
-    def __init__(self, week_days, day_session_nums):
-        self.week_days = week_days
-        self.day_session_nums = day_session_nums
+    def __init__(self):
+        while True:
+            try:
+                self.days = int(input("\nFor how many days in week? "))
+                self.lessons = int(input("\nEnter number of sessions per day: "))
+                break
+            except Exception:
+                print('Please enter a valid number!')
 
     def days_sessions(self):
         # Returns number of days in a week, and name of each sessions in a day.
-        num_day = []
-        day_sessions = []
-        for day in range(1, self.week_days + 1):
-            num_day.append(day)
+        sessions = []
+        for day in range(1, self.days + 1):
             names = []
-            for num in range(1, self.day_session_nums + 1):
+            for num in range(1, self.lessons + 1):
                 print(f"\nEnter data for day {day}:")
                 name = str(input(f"\nEnter name for session {num}: "))
                 names.append(name)
-            day_sessions.append(names)
+            sessions.append(names)
 
-        # Convert day numbers and day names into a dictionary.
-        day_list = dict(zip(num_day, day_name[: self.week_days]))
-        day_value = []
-        for day in day_list.values():
-            # Get the day name, and add it to a list.
-            day_value.append(day)
-        return day_value, day_sessions
+        # Make a dictionary : {'day' : [sessions of that day]}
+        tables = dict(zip(heptad[: self.days], sessions))
+        return tables
