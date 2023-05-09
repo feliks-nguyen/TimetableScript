@@ -4,6 +4,7 @@ A simple Python script was written to generate tables based on the inputted data
 
 
 ## Installation
+Python version: `3.11.3`
 
 ```bash
 pip install -r requirements.txt
