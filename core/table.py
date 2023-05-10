@@ -23,21 +23,22 @@ from import_value import ImportValue
 
 
 class TableData:
-    def __init__(self) -> None:
+    def __init__(self):
         self.array = list()
         self.parts = list()
 
     def inputData(self):
-        # Adds data to 2 lists
+        """Adds data to 2 lists"""
         while True:
             try:
                 parts_num = int(input("\nEnter number of parts: "))
-                for i in range(0, parts_num):
+                for i in range(parts_num):
+                    # Check if the name of parts are similar
                     part = input(f"\nEnter name for part {i+1}: ")
                     self.parts.append(part)
                 break
             except ValueError:
-                print("Please enter a valid number!")
+                print("\nPlease enter a valid number!")
 
         for name in self.parts:
             print(f"\nEnter value for {name}:")
