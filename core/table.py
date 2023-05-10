@@ -32,11 +32,11 @@ class TableData:
         while True:
             try:
                 parts_num = int(input("\nEnter number of parts: "))
-                for i in range(1, parts_num + 1):
-                    part = input(f"\nEnter name for part {i}: ")
+                for i in range(0, parts_num):
+                    part = input(f"\nEnter name for part {i+1}: ")
                     self.parts.append(part)
                 break
-            except Exception:
+            except ValueError:
                 print("Please enter a valid number!")
 
         for name in self.parts:

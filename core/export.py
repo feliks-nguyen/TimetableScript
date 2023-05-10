@@ -30,7 +30,7 @@ nest = TableData().inputData()
 def exportTXT(filename):
     """export the table into a <given name>.txt file"""
     # Define the file name and path
-    file_path = Path.cwd().parent / "results" / f"{filename}.xlsx"
+    file_path = Path.cwd().parent / "results" / f"{filename}.txt"
     with open(f"{file_path}", "w", encoding="utf-8") as f:
         # Loop over the nested dictionary and create a dataframe for each table
         for part, table in nest.items():
@@ -46,6 +46,7 @@ def exportTXT(filename):
 
 
 def exportXLSX(filename):
+    """export the table into a <given name>.xlsx file"""
     # Define the file name and path
     file_path = Path.cwd().parent / "results" / f"{filename}.xlsx"
 

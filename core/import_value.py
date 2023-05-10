@@ -31,17 +31,17 @@ class ImportValue:
                 self.days = int(input("\nFor how many days in week? "))
                 self.lessons = int(input("\nEnter number of sessions per day: "))
                 break
-            except Exception:
+            except ValueError:
                 print("Please enter a valid number!")
 
     def days_sessions(self):
         # Returns number of days in a week, and name of each sessions in a day.
         sessions = []
-        for day in range(1, self.days + 1):
+        for day in range(0, self.days):
             names = []
-            for num in range(1, self.lessons + 1):
-                print(f"\nEnter data for day {day}:")
-                name = str(input(f"\nEnter name for session {num}: "))
+            for num in range(0, self.lessons):
+                print(f"\nEnter data for day {day+1}:")
+                name = str(input(f"\nEnter name for session {num+1}: "))
                 names.append(name)
             sessions.append(names)
 
