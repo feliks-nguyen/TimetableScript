@@ -29,16 +29,17 @@ class TableData:
 
     def inputData(self):
         """Adds data to 2 lists"""
-        while True:
-            try:
-                parts_num = int(input("\nEnter number of parts: "))
-                for i in range(parts_num):
-                    # Check if the name of parts are similar
-                    part = input(f"\nEnter name for part {i+1}: ")
+        parts_num = int(input("\nEnter number of parts: "))
+        for i in range(parts_num):
+            while True:
+                part = input(f'\nEnter a name for part {i+1}: ').lower()
+                if part == '':
+                    print('\nName cannot be empty! Please try gain.')
+                elif part in self.parts: 
+                    print('\nThat name already exits! Please try again.')
+                else:
                     self.parts.append(part)
-                break
-            except ValueError:
-                print("\nPlease enter a valid number!")
+                    break
 
         for name in self.parts:
             print(f"\nEnter value for {name}:")
